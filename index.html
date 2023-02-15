@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواقيت الصلاة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="top">
+                <h2 class="top-title">الأقصر</h2>
+                <h1 class="h1">  <span id="name"> </span></h1>
+                <h4 class="top-desc">22/1/2020</h4>
+            </div>
+            <hr>
+            <div class="card">
+
+                <div class="card-item">
+                    <div class="header-card-item">
+                        <h5 >الفجر</h5>
+                    </div>
+
+                    <div class="body-card-item">
+                        <h2 class="body" id="fajr-time">
+                            4:10
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="header-card-item">
+                        <h5 >الشروق</h5>
+                    </div>
+
+                    <div class="body-card-item">
+                        <h5 class="body" id="sunrise-time">
+                            6:00
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="header-card-item">
+                        <h5>الظهر</h5>
+                    </div>
+
+                    <div class="body-card-item">
+                        <h2 class="body" id="dohr-time">
+                            4:10
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="header-card-item">
+                        <h5>العصر</h5>
+                    </div>
+
+                    <div class="body-card-item">
+                        <h5 class="body" id="asr-time">
+                            4:00
+                        </h5>
+                    </div>
+                </div>
+
+              
+
+                <div class="card-item">
+                    <div class="header-card-item">
+                        <h5>المغرب</h5>
+                    </div>
+
+                    <div class="body-card-item">
+                        <h5 class="body" id="magrib-time">
+                            3:00
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="card-item">
+                    <div class="header-card-item">
+                        <h5>العشاء</h5>
+                    </div>
+
+                    <div class="body-card-item">
+                        <h5 class="body" id="aesha-time">
+                            7:15
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="center">
+                <select name="" id="center-content">
+                    <option value="" style="background: #333;">الرياض</option>
+                    <option value="" style="background: #333;">الشرقية</option>
+                    <option value="" style="background: #333;">جدة</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="js/scripte.js"></script>
+</body>
+</html>
