@@ -71,15 +71,15 @@ hr{
     text-align: center;
     margin-top: 120px;
 }
-#center-content {
+.center-content {
     background: none;
     width: 300px;
     height: 35px;
     border-radius: 20px;
-    color: #fff;
     font-size: 20px;
     font-family: 'Lobster', cursive;
     padding: 0 10px;
+    color: yellowgreen;
 }
 
 

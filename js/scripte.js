@@ -13,31 +13,75 @@ let name= 'مواقيت الصلاة'
 setInterval( () => {
   text()
 }, 700)
-let params = {
-    country : "SA",
-    city: "Luxor"
+
+let cities=[
+  "الاسكندرية", "القاهرة", "الأقصر"
+]
+
+for(city of cities){
+  let content = `
+  <option>${city}</option>
+  `
+  let citiesInput=document.getElementById("cities-select")
+
+  citiesInput.innerHTML +=content
 }
 
+document.getElementById("cities-select").addEventListener("chang", function(){
+  alert("welcome")
+})
+
+let params = {
+  country: "EG",
+  city: "Luxor"
+}
 axios.get('http://api.aladhan.com/v1/timingsByCity', {
-    params: params
-  })
-  .then(function (response) {
-    const timing = response.data.data.timings
+  params: params
+})
+.then(function (response) {
+  let timings = response.data.data.timings;
 
-    fillTiming("fajr-time", timing.Fajr)
-    fillTiming("sunrise-time", timing.Sunrise)
-    fillTiming("dohr-time", timing.Dhuhr)
-    fillTiming("asr-time", timing.Asr )
-    fillTiming("magrib-time", timing.Maghrib)
-    fillTiming("aesha-time", timing.Isha)
+  let getTimeGajr=document.getElementById("fajr-time");
+  getTimeGajr.innerHTML=timings.Fajr
+  console.log(timings.Sunrise, timings.Asr, timings.Maghrib , timings.Isha);
 
-    // document.getElementById("fajr-time").innerHTML = timing.Fajr
+  fillTime("sunrise-time", timings.Sunrise)
+  fillTime("dohr-time", timings.Dhuhr)
+  fillTime("asr-time", timings.Asr )
+  fillTime("magrib-time", timings.Maghrib)
+  fillTime("aesha-time", timings.Isha)
 
-    console.log(response.data.data.timings);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
- function fillTiming(id, time){
-    document.getElementById(id).innerHTML = time
- }
+  let readable=response.data.data.date.readable
+
+  let weekDay=response.data.data.date.hijri.weekday.ar
+
+  let inputDate=document.getElementById("date")
+  date=weekDay + " "+readable
+  inputDate.innerHTML= date
+  console.log(weekDay + " "+readable)
+
+})
+.catch(function (error) {
+  console.log(error);
+})
+
+
+function fillTime(id, time){
+  document.getElementById(id).innerHTML = time
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
